@@ -1,0 +1,129 @@
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#ff6f91;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-size:20px;
+  z-index:999;
+}
+
+body{
+  margin:0;
+  font-family:sans-serif;
+  overflow:hidden;
+  background:linear-gradient(135deg,#ffdde1,#ee9ca7,#fad0c4);
+}
+
+/* PAGE */
+.page{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px;
+  opacity:0;
+  transform:scale(0.95);
+  transition:all 0.6s ease;
+}
+
+.page.active{
+  display:flex;
+  opacity:1;
+  transform:scale(1);
+}
+
+/* TEXT */
+h1{
+  font-size:6vw;
+  color:#ff2e63;
+}
+
+p{
+  font-size:4vw;
+  color:#333;
+}
+
+/* GIF */
+.gif{
+  width:200px;
+  margin:15px 0;
+  border-radius:20px;
+}
+
+/* BUTTON */
+.btns{
+  display:flex;
+  gap:10px;
+}
+
+button{
+  padding:12px 22px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff4d6d,#ff758c);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+/* TYPING */
+.typing{
+  overflow:hidden;
+  border-right:2px solid #ff2e63;
+  white-space:nowrap;
+  width:0;
+  animation:typing 2s steps(30,end) forwards, blink .6s infinite;
+}
+
+@keyframes typing{
+  to{width:100%}
+}
+
+@keyframes blink{
+  50%{border-color:transparent}
+}
+
+/* FLOAT HEART */
+.bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+
+.bg span{
+  position:absolute;
+  animation:float 8s linear infinite;
+}
+
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
+}
+
+/* HEART RAIN */
+.heart{
+  position:fixed;
+  top:-10px;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(100vh);
+    opacity:0;
+  }
+}
